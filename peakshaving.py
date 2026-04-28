@@ -205,7 +205,7 @@ if uploaded_file:
             
         col_dl1, col_dl2 = st.columns(2)
         col_dl1.download_button("📄 Raporu İndir (.txt)", data=report_text, file_name="BESS_Rapor.txt", mime="text/plain")
-        col_dl2.download_button("📊 Optimize Veriyi İndir (.csv)", data=df.to_csv(index=False).encode('utf-8'), file_name="BESS_Veri.csv", mime="text/csv")
+        col_dl2.download_button("📊 Optimize Veriyi İndir (.csv)", data=df.to_csv(index=False, sep=';', decimal=',').encode('utf-8-sig'), file_name="BESS_Veri.csv", mime="text/csv")
         
     except Exception as e:
         st.error(f"Veri işlenirken bir hata oluştu: {e}")
